@@ -1,0 +1,27 @@
+<h1>All news</h1>
+<%= link_to 'Add news', new_whatnews_path %>
+<table>
+	<tr>
+		<th>id</th>
+		<th>Caption</th>
+		<th>Text</th>
+		<th>Tag</th>
+		<th colspan="4"></th>
+	</tr>
+
+	<% @whatnews.each do |whatnew| %>
+		<tr>
+			<td> <%= whatnew.id %>	</td>	
+			<td> <%= whatnew.caption %>	</td>
+			<td> <%= whatnew.text %>	</td>
+			<td> <%= whatnew.tag %> 	</td>
+			<td> <%= link_to 'show', whatnews_path(whatnew) %> </td>
+			<td> <%= link_to 'edit', edit_whatnews_path(whatnew) %> </td>
+			<td> <%= link_to 'destroy', whatnews_path(whatnew),
+										method: :delete,
+										data: { confirm: 'Are you sure?' }	%>
+			</td>
+		</tr>		
+	<% end %>
+</table>
+<%= link_to 'Home', root_path %>
