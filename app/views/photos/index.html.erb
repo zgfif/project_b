@@ -1,3 +1,19 @@
 <h1>All photos</h1>
+
+	<table>
+		<th>Caption</th>
+		<!-- <th>Image</th> -->
+		<% @photos.each do |photo| %>
+		<tr>
+			<td><%= photo.ph_name %></td>
+			<td> <%= link_to 'Show', photo_path(photo) %> </td>
+			<td> <%= link_to 'Edit', edit_photo_path(photo) %> </td>
+			<td> <%= link_to 'Delete', photo_path(photo),
+					method: :delete, data:{confirm: 'Are you sure ?'}
+				 %> </td>
+		</tr>
+		<% end %>
+	</table>
+
 <%= link_to 'Add photo', new_photo_path %> <br>
 <%= link_to 'Home', root_path %>

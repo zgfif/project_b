@@ -7,6 +7,15 @@
 		<strong>Event description:</strong>
 		<%= @event.ev_description %>
 	</p>
+	<p>
+		<% @event.photos.each do |photo| %>
+			<% if photo.image? %>
+				<%= image_tag photo.image.url(:large) if photo.image?  %>
+			<% else %>
+				<strong>No image</strong>
+			<% end %>
+		<% end %>
+	</p>
 	<%= link_to 'Events', events_path %>
 	<%= link_to 'Home', root_path %>
 	<br>

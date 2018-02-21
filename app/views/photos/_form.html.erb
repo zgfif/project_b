@@ -1,0 +1,24 @@
+<%= form_with model: @photo, html: { multipart: true }, local: true  do |form| %>
+	<p>
+		<%= form.label 'Please, choose event' %>
+		<%= collection_select(:photo, :event_id, Event.all, :id, :ev_title) %>
+		
+	</p>
+	<p>
+		<%= form.label :ph_name %>
+		<%= form.text_field :ph_name %>
+	</p>
+	<p>
+		<%= form.label :image %>
+		<%= form.file_field :image %>
+	</p>
+	<p>
+		<%= image_tag @photo.image %>
+  		<%= form.check_box :remove_image %>
+	</p>
+  		
+	
+
+
+	<%= form.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Photo</h1>
+<p>	<strong>Событие:</strong>
+	<%= @photo.event.ev_title %>
+</p>
+<p>	<strong>Название:</strong>
+	<%= @photo.ph_name %>
+</p>
+<%= image_tag @photo.image.url(:large) if @photo.image? %>
+
+<p><%= link_to 'Редактировать', edit_photo_path(@photo) %></p>
+<%= link_to 'Home', root_path %>
