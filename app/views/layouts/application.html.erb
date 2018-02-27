@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <p>
+      Кружок компьютерных наук |
+        <% if user_signed_in? %>  
+            <%= link_to 'Profile' ,user_path(current_user) %> |
+            <strong><%= current_user.email %></strong>
+            <%= link_to 'Sign out',  destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Sign in', new_user_session_path %> |
+            <%= link_to 'Sign up', new_user_registration_path %>
+        <% end %>
+    </p>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
