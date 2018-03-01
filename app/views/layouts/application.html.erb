@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>ProjectB</title>
+    <%= favicon_link_tag 'favicon_proj_b.ico' %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAVW5Dt4SR_7vMGpR-lN_XXX-KLYoJwAQ&callback=initMap"
+    async defer></script>
   </head>
 
   <body>
+     
     <p>
       Кружок компьютерных наук |
         <% if user_signed_in? %>  
