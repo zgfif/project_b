@@ -1,5 +1,5 @@
 <h1>All events</h1>
-<%= link_to 'Add new event', new_event_path %>
+<%= link_to 'Add new event', new_admin_event_path %>
 <table>
 		<th>Title</th>
 		<th>Description</th>
@@ -9,8 +9,8 @@
 		<td><%= event.ev_title %></td>
 		<td><%= event.ev_description %></td>	
 		<td><%= link_to 'Show', event_path(event) %></td>
-		<td><%= link_to 'Edit', edit_event_path(event) %></td>
-		<td><%= link_to 'Destroy', event_path(event) , method: :delete %></td>
+		<td><%= link_to 'Edit', edit_admin_event_path(event) %></td>
+		<td><%= link_to 'Destroy', admin_event_path(event) , method: :delete %></td>
 	</tr>
 	<% end %>
 </table>

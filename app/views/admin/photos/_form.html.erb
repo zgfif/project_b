@@ -1,4 +1,4 @@
-<%= form_with model: @photo, html: { multipart: true }, local: true  do |form| %>
+<%= form_with model: [:admin, @photo], html: { multipart: true }, local: true  do |form| %>
 	<p>
 		<%= form.label 'Please, choose event' %>
 		<%= collection_select(:photo, :event_id, Event.all, :id, :ev_title) %>

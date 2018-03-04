@@ -1,6 +1,6 @@
 
 <h1>Все темы</h1>
-<%= link_to 'Новый предмет', new_subject_path %><br> 
+<%= link_to 'Новый предмет', new_admin_subject_path %><br> 
 <table>
   <tr>
   	<th>id</th>
@@ -16,8 +16,8 @@
       <td><%= subject.description %></td>
       <td><%= subject.updated_at %></td>
       <td><%= link_to 'Показать', subject_path(subject) %></td>
-      <td><%= link_to 'Редактировать', edit_subject_path(subject) %></td>
-      <td><%= link_to 'Удалить', subject_path(subject), method: :delete,data: {confirm: 'Вы уверены?'} %></td>
+      <td><%= link_to 'Редактировать', edit_admin_subject_path(subject) %></td>
+      <td><%= link_to 'Удалить', admin_subject_path(subject), method: :delete,data: {confirm: 'Вы уверены?'} %></td>
     </tr>
   <% end %>
 </table>

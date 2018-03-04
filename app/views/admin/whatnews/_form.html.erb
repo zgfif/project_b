@@ -1,8 +1,6 @@
-<h1>Добавить новость</h1>
-<%#= render 'form' %>
-<%= form_with scope: :whatnew, url: whatnews_index_path, local: true do |form| %>
+<%= form_with model: [:admin, @whatnew], local: true  do |form| %>
 
-	<% if @whatnew.errors.any? %>
+  <% if @whatnew.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@whatnew.errors.count, "error") %> prohibited
@@ -29,5 +27,7 @@
     <%= form.text_field :tag %>
   </p>
   <%= form.submit %>
-
 <% end %>
+<!-- 
+ <%= link_to 'Home', root_path %>
+  -->

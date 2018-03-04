@@ -1,4 +1,5 @@
-<%= form_with model: @whatnew, local: true  do |form| %>
+<h1>Добавить новость</h1>
+<%= form_with model: [:admin, @whatnew], url: admin_whatnews_index_path, local: true  do |form| %>
 
   <% if @whatnew.errors.any? %>
     <div id="error_explanation">
@@ -28,6 +29,3 @@
   </p>
   <%= form.submit %>
 <% end %>
-<!-- 
- <%= link_to 'Home', root_path %>
-  -->

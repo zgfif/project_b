@@ -1,5 +1,5 @@
 <h1>All news</h1>
-<%= link_to 'Add news', new_whatnews_path %>
+<%= link_to 'Add news', new_admin_whatnews_path %>
 <table>
 	<tr>
 		<th>id</th>
@@ -16,8 +16,8 @@
 			<td> <%= whatnew.text %>	</td>
 			<td> <%= whatnew.tag %> 	</td>
 			<td> <%= link_to 'show', whatnews_path(whatnew) %> </td>
-			<td> <%= link_to 'edit', edit_whatnews_path(whatnew) %> </td>
-			<td> <%= link_to 'destroy', whatnews_path(whatnew),
+			<td> <%= link_to 'edit', edit_admin_whatnews_path(whatnew) %> </td>
+			<td> <%= link_to 'destroy', admin_whatnews_path(whatnew),
 										method: :delete,
 										data: { confirm: 'Are you sure?' }	%>
 			</td>
