@@ -20,7 +20,9 @@
 	<%= @user.admin %>
 </p>
 <p>
-	<%= link_to 'Edit profile', edit_user_path(@user) %> 
-	|
+	<%= link_to 'Edit profile', edit_user_path(@user) %> |
+	<% if current_user.id.to_i == params[:id].to_i %>
+		<%= link_to 'Edit email/password', edit_user_registration_path %>|
+	<% end %>
 	<%= link_to 'Home', root_path %>	
 </p>
