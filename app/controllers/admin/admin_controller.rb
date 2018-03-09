@@ -5,6 +5,6 @@ class Admin::AdminController < ApplicationController
 	protected
 
 	def check_admin
-		redirect_to root_path, alert: 'У вас нет доступа к данной странице' unless current_user.admin?
+		redirect_to root_path, alert: 'У Вас нет доступа к этой странице' unless current_user.admin?
 	end
 end
