@@ -57,4 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave', '~> 1.0' #gem for uploading image
 gem 'mini_magick' # imageprocessing file
 gem 'devise' #registration and authorization gem
-gem 'geocoder' # converting address to coordinates
+# gem 'geocoder' # converting address to coordinates
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
