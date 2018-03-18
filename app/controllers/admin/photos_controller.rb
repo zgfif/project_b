@@ -24,6 +24,10 @@ class Admin::PhotosController < Admin::AdminController
 	def update
 		@photo = Photo.find(params[:id])
 		
+		if params[:photo][:remove_image] == "1"
+			@photo.remove_image!
+		end
+
 		if @photo.update(photo_params)
 			redirect_to @photo
 		else

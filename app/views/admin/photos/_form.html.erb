@@ -13,9 +13,11 @@
 		<%= form.file_field :image %>
 	</p>
 	<p>
-		<%= image_tag @photo.image %>
-  		<%= form.check_box :remove_image %>
-	</p>
+    <label>
+      <%= form.check_box :remove_image %>
+      Remove image
+    </label>
+  </p>
   		
 	
 
