@@ -20,8 +20,8 @@
       #map {
         height: 17em;
         width: 100%;
-
       }
+
       /* Optional: Makes the sample page fill the window. */
       html, body {
       	font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -29,3 +29,9 @@
         margin: 0;
         padding: 0;
       }
+
+     .base_block{
+        /*argin-bottom: 17em;*/
+        height: 17em;
+        width: 100%;
+     } 
