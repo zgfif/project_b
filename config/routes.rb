@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   root 'welcome#index'
+  get "/pages/:page" => "pages#show"
+
+
   
   resources :whatnews, only: [:index, :show]
   resources :subjects, only: [:index, :show]

@@ -13,14 +13,22 @@
               <div class="base_block">
                   <!-- <center> -->
                     <h1>Новости</h1>
-                    <!-- <img src="..." alt="..." class="img-thumbnail"> -->
-                  <!-- </center> -->
+                      <% @whatnews.each do |whatnew| %>
+                        <p>
+                          <%= link_to whatnew.caption, whatnews_path(whatnew) %>
+                        </p>
+                      <% end %>
                   <hr>
               </div>
 
               <div class="base_block">
                   <!-- <center> -->
                     <h1>Программа</h1>
+                    <% @subjects.each do |subject| %>
+                        <p>
+                          <%= link_to subject.title, subject_path(subject) %>
+                        </p>
+                      <% end %>
                   <!-- </center> -->
                   <hr>
               </div>
