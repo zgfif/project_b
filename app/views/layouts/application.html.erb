@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>ProjectB</title>
+    <title>Project</title>
     <%= favicon_link_tag 'favicon_proj_b.ico' %>
     <%= csrf_meta_tags %>
 
@@ -12,9 +12,9 @@
     async defer></script>
   </head>
 
-  <body>
-
-
+<body class="site">
+    <main class="site-content">
+        
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <%= link_to image_tag("favicon_proj_b.ico"), root_path, class: 'navbar-brand' %>
 
@@ -25,53 +25,77 @@
             </li>
           </ul>
           <ul class="navbar-nav mr-right">
-              
-          
- 
+
+
+
              <% if user_signed_in? %>
                   <li class="nav-item active">
-                      <%= link_to 'Профиль' ,user_path(current_user), class: 'nav-link' %> 
-                  </li>  
+                      <%= link_to 'Профиль' ,user_path(current_user), class: 'nav-link' %>
+                  </li>
                   <li class="nav-item">
                     <div class="nav-link active">
                         <%= current_user.email %>
                     </div>
-                        
-                  </li>    
+
+                  </li>
                   <li class="nav-item disabled" >
                       <%= link_to 'Выйти',  destroy_user_session_path, method: :delete, data: {:confirm => 'Вы уверены?'}, class: 'nav-link' %>
-                  </li>  
-                      
+                  </li>
+
                   <% else %>
                   <li class="nav-item active">
                       <%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link' %>
                   </li>
                   <li class="nav-item active">
-                      <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %> 
-                  </li>    
-                      
+                      <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
+                  </li>
+
                   <% end %>
-          </ul>        
+          </ul>
          </div>
       </nav>
-             <p class="notice">
-                    <%= notice %>    
-              </p>
+       
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+        
+            <%= yield %>        
+    </main>
 
-              <p class="alert">
-                    <%= alert %>
-              </p>
 
-
-          <%= yield %>            
-
-          <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-          <div class="footer base_block">
-            &copy; 2017-2018, Bratanov, <%= link_to 'О нас', '/pages/about' %><%= link_to 'Контакты', '/pages/contacts' %>
-          </div>          
 
 
           
-  </body>
+    
+          
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+          <footer>
+            <div class="container">
+                <div class="row align-items-center footer_block">
+                    <div class="col copy_right">
+                      <p>  <%= link_to image_tag("favicon_proj_b.ico"), root_path, class: 'navbar-brand' %>PCbrains</p>
+                      <p>&copy; 2017-2018, Bratanov</p>
+                    </div>
+                    <div class="col contacts">
+                        <%= link_to 'Контакты', '/pages/contacts' %>
+                    </div>
+                        
+                    <div class="col aboutus">
+                        <%= link_to 'О нас', '/pages/about' %>
+                    </div>
+                    <div class="col github">
+                        <%= link_to 'Github', 'https://github.com/zgfif/project_b', target: '_blank'  %>
+                    </div>
+              </div>  
+            </div>
+            
+  <!--              , ||<%= link_to 'Feature1', '/pages/features/one' %>|<%= link_to 'Feature2', '/pages/features/two' %>
+ -->          
+          </footer>
+          
+
+  
+  
+
+</body>
 </html>

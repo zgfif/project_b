@@ -14,12 +14,26 @@
  * require_self
  */
  @import "bootstrap";
+
+/* Made sticky footer by flexbox */
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+/******************************/
+
  
  /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
         height: 17em;
         width: 100%;
+
       }
 
       /* Optional: Makes the sample page fill the window. */
@@ -40,7 +54,7 @@
      /*background-color: green;*/
      
      }
-
+/*Developing button to scroll on top*/
      #myBtn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
@@ -59,11 +73,34 @@
 
     #myBtn:hover {
       background-color: #555; /* Add a dark-grey background on hover */
+      }
+/*--------------------------------------------------------------*/
+    footer{
+      //  background-color: #C0FF33; 
+        min-height: 204px;
+        /*margin: 0 15px;*/
+        text-align: center;
+         font-weight: bold;
+         color: grey;
+         text-decoration: none;
     }
 
-
-
-
-
-
-
+    .footer_block {
+    height: 204px;
+    }
+    .copy_right{
+        height: 50px;
+        //background-color: #1CE;
+    }
+    .contacts{
+        //background-color: #663399;
+        height: 50px;
+    }
+    .aboutus{
+        height: 50px;
+        //background-color: #6A6;
+    }
+    .github{
+        height: 50px;
+        //background-color: #FECA1E;
+    }
