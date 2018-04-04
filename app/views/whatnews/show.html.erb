@@ -1,15 +1,16 @@
-<h1>Show news</h1>
-<p>
-<b>Caption:</b>
-<%= @whatnew.caption %>
-</p>
-<p>
-<b>Text:</b>
-<%= @whatnew.text %>
-</p>
+<div class="container">
 
-<p>
-  <b>Tag:</b>
-  <%= @whatnew.tag %>
-</p>
-<%= link_to 'Home', root_path %>
+
+		<h2><%= @whatnew.caption %></h2>
+		<p>
+			<%= @whatnew.text %>
+		</p>
+
+		<p>
+		  <b>Tag:</b>
+		  <%= @whatnew.tag %>
+		</p>
+		<if user.sign_in?&&current_user.admin? %>
+			<%=  link_to 'Редактировать', edit_admin_whatnews_path(@whatnew), class: 'btn btn-outline-secondary' %>
+	
+</div>

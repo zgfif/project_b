@@ -13,6 +13,8 @@
  * require_tree .
  * require_self
  */
+ @import "welcome";
+
  @import "bootstrap";
 
 /* Made sticky footer by flexbox */
@@ -31,7 +33,7 @@
  /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 17em;
+        height: 19em;
         width: 100%;
 
       }
@@ -46,7 +48,7 @@
 
      .base_block{
         /*argin-bottom: 17em;*/
-        height: 17em;
+        //height: 17em;
         width: 100%;
      } 
      .signin{

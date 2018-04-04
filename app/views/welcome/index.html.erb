@@ -7,17 +7,36 @@
 <%= link_to 'Пользователи', admin_users_path %>
  -->
 
-
-<div class="container">
-                
+<div class="container">           
               <div class="base_block">
                   <!-- <center> -->
                     <h1>Новости</h1>
-                      <% @whatnews.each do |whatnew| %>
+                      
                         <p>
-                          <%= link_to whatnew.caption, whatnews_path(whatnew) %>
+                          
                         </p>
-                      <% end %>
+                      
+                      <div class="row">
+                          <% @whatnews.each do |whatnew| %>    
+                            
+                              <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                      <h5 class="card-title"><%= link_to whatnew.caption, whatnews_path(whatnew) %></h5>            
+                                      <p class="text-muted"> <%=  whatnew.created_at.strftime("%m.%d.%Y"+" в "+"%H:%M") %> </p>
+                                      <p class="card-text"><%= truncate(whatnew.text, length: 67)  %></p>
+                                      <!-- <h5 class="card-title"><%= link_to 'Подробнее', whatnews_path(whatnew), class: 'btn btn-primary' %></h5> -->  
+                                    </div>
+                                </div>
+                              </div>
+                          <% end %>
+                      </div>
+                      <div class="row row_link">
+                        <div class="col-sm-3 link_welcome align-self-end">
+                            <h5><%= link_to 'Все новости', whatnews_index_path, class: 'btn btn-primary' %></h5> 
+                        </div>
+                      </div>
                   <hr>
               </div>
 
