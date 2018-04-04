@@ -32,9 +32,12 @@
                               </div>
                           <% end %>
                       </div>
-                      <div class="row row_link">
+                      <div class="row row_link justify-content-end">
                         <div class="col-sm-3 link_welcome align-self-end">
-                            <h5><%= link_to 'Все новости', whatnews_index_path, class: 'btn btn-primary' %></h5> 
+                            <div class="to_right">
+                                <h5><%= link_to 'Все новости', whatnews_index_path, class: 'btn btn-primary' %></h5>   
+                            </div>
+                            
                         </div>
                       </div>
                   <hr>
