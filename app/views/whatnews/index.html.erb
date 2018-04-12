@@ -1,5 +1,7 @@
-<h1>All news</h1>
-<%= link_to 'Add news', new_admin_whatnews_path %>
+
+<div class="container">
+	<h1>Все новости</h1>
+<%= link_to 'Добавить', new_admin_whatnews_path, class: 'btn btn-primary' %>
 <table>
 	<tr>
 		<th>id</th>
@@ -13,8 +15,8 @@
 		<tr>
 			<td> <%= whatnew.id %>	</td>	
 			<td> <%= whatnew.caption %>	</td>
-			<td> <%= whatnew.text %>	</td>
-			<td> <%= whatnew.tag %> 	</td>
+			<td> <%= truncate(whatnew.text, length: 17) %>	</td>
+			<td> <%=  whatnew.tag %> 	</td>
 			<td> <%= link_to 'show', whatnews_path(whatnew) %> </td>
 			<td> <%= link_to 'edit', edit_admin_whatnews_path(whatnew) %> </td>
 			<td> <%= link_to 'destroy', admin_whatnews_path(whatnew),
@@ -24,4 +26,5 @@
 		</tr>		
 	<% end %>
 </table>
-<%= link_to 'Home', root_path %>
+</div>
+<!-- <%= link_to 'Home', root_path %> -->
