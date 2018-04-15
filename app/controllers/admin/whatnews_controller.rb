@@ -37,6 +37,6 @@ class Admin::WhatnewsController < Admin::AdminController
   private
   
   def whatnew_params
-    params.require(:whatnew).permit(:caption,:text,:tag)
+    params.require(:whatnew).permit(:caption,:text,:tag, :imagenews)
   end
 end

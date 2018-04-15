@@ -1,7 +1,9 @@
 <div class="container">
-
-
-		<h2><%= @whatnew.caption %></h2>
+			<h2><%= @whatnew.caption %></h2>
+		<div class="whatnew_image_show">
+			<%= image_tag(@whatnew.imagenews_url) if @whatnew.imagenews? %>   
+		</div>		
+		    
 		<p>
 			<%= @whatnew.text %>
 		</p>

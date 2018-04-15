@@ -15,3 +15,11 @@
 .to_right{
 	float: right;
 }
+.image_in_card{
+
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+    max-height: 164px;
+
+}

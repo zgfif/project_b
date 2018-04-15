@@ -21,6 +21,13 @@
                             
                               <div class="col-sm-3">
                                 <div class="card">
+
+                                    <% if whatnew.imagenews? %>
+                                          <%= image_tag(whatnew.imagenews_url,  class: 'card-img-top image_in_card')  %>
+                                     <% else %> 
+                                          <%= image_tag('no_image.png',  class: 'card-img-top image_in_card') %>         
+                                     <% end %>
+                                     <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                                     <div class="card-body">
 
                                       <h5 class="card-title"><%= link_to whatnew.caption, whatnews_path(whatnew) %></h5>            
@@ -35,7 +42,7 @@
                       <div class="row row_link justify-content-end">
                         <div class="col-sm-3 link_welcome align-self-end">
                             <div class="to_right">
-                                <h5><%= link_to 'Все новости', whatnews_index_path, class: 'btn btn-primary' %></h5>   
+                                <h5><%= link_to 'Ещё', whatnews_index_path, class: 'btn btn-primary' %></h5>   
                             </div>
                             
                         </div>
@@ -52,6 +59,14 @@
                         </p>
                       <% end %>
                   <!-- </center> -->
+                    <div class="row row_link justify-content-end">
+                      <div class="col-sm-3 link_welcome align-self-end">
+                          <div class=" to_right">
+                              <%= link_to 'Ещё', subjects_path, class: 'btn btn-primary' %>
+                            </div>
+                      </div>  
+                    </div>
+                    
                   <hr>
               </div>
 

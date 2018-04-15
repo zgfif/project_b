@@ -1,9 +1,12 @@
-<h1>тема</h1>
 
-<strong>Заголовок:</strong>
-<%= @subject.title %> <br>
-<strong>Описание:</strong>
-<%= @subject.description %><br>
-<%= link_to 'Домой', root_path %><br>
-<%= link_to 'Редактрировать', edit_admin_subject_path(@subject) %>
-<%= link_to 'Назад', :back %>
+<div class="container">
+		<strong>Заголовок:</strong>
+			<%= @subject.title %> <br>
+		<strong>Описание:</strong>
+			<%= @subject.description %><br>	
+			<%= link_to 'Редактрировать', edit_admin_subject_path(@subject), class: 'btn btn-outline-secondary' %>
+</div>
+
+
+
+
