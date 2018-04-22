@@ -13,12 +13,14 @@
 		<%= form.label :image %>
 		<%= form.file_field :image %>
 	</p>
-	<p>
-    <label>
-      <%= form.check_box :remove_image %>
-      Remove image
-    </label>
-  </p>
+	<% unless  @photo.image.blank? %>
+			<p>
+		    <label>
+		      <%= form.check_box :remove_image %>
+		      Remove image
+		    </label>
+		  </p>
+  	<% end %>
 
 	<%= form.submit 'Сохранить' %>
 <% end %>

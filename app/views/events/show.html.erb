@@ -11,7 +11,7 @@
 			
 		
 		
-		
+		<div class="event_sh_photos">
 			<% @event.photos.each do |photo| %>
 				<% if photo.image? %>
 					<%= link_to (image_tag photo.image.url(:large), width: '164') , photo_path(photo) %>
@@ -19,9 +19,8 @@
 					<%= link_to image_tag('no_image.png'), photo_path(photo)  %>
 				<% end %>
 			<% end %>
+		</div>
 		
-		<%#= link_to 'Все события', events_path %>
-		 <%#= link_to 'Home', root_path %>
 		<p>
 		<%= link_to 'Редактировать', edit_admin_event_path(@event), class: 'btn btn-outline-secondary' %>
 		<%= link_to 'Добавить фото', new_admin_photo_path, class: 'btn btn-outline-secondary' %>

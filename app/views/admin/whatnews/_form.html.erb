@@ -18,6 +18,14 @@
 
     <%= form.file_field :imagenews %>
   </div>
+  <% unless @whatnew.imagenews.blank? %>
+      <div class="form-group">
+        <label>
+          <%= form.check_box :remove_imagenews %>
+          Удалить изображение
+        </label>
+      </div>
+  <% end %>
 
   <div class="form-group">
   

@@ -20,6 +20,11 @@ class Admin::WhatnewsController < Admin::AdminController
   def update
     @whatnew = Whatnew.find(params[:id])
 
+
+      if params[:whatnew][:remove_imagenews] == "1"
+        @whatnew.remove_imagenews!
+      end
+
       if @whatnew.update(whatnew_params)
       redirect_to @whatnew
       else
