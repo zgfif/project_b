@@ -1,28 +1,35 @@
-<h1>All photos</h1>
+<div class="container">
+		<h1>Все фото</h1>
+					<%= link_to 'Добавить фото', new_admin_photo_path, class: 'btn btn-primary' %> 
+			<table>
+				<th>
+				 
+					<!-- <td>Image</td> -->
+					<!-- <td>Caption</td>	 -->
+				</th colspan= "3">
+				<% @photos.each do |photo| %>
+				<tr>
+					<% if photo.image.present? %>
+					<td> <%=  link_to (image_tag photo.image, height: "150em", width: "auto"), photo_path(photo) %>  </td>
+					<% else %>
+						<td><%=  link_to (image_tag 'no_image.png', height: "150em", width: "auto"), photo_path(photo) %></td>
+					<% end %>
+					<td><%= photo.ph_name %></td>
 
-	<table>
-		<th>
-		 
-			<td>Image</td>
-			<td>Caption</td>	
-		</th colspan= "3">
-		<% @photos.each do |photo| %>
-		<tr>
-			<% if photo.image.present? %>
-			<td> <%=  link_to (image_tag photo.image, height: "150em", width: "auto"), photo_path(photo) %>  </td>
-			<% else %>
-				<td>no image</td>
-			<% end %>
-			<td><%= photo.ph_name %></td>
+					<td> <%= link_to 'Show', photo_path(photo) %> </td>
+					<td> <%= link_to 'Edit', edit_admin_photo_path(photo) %> </td>
+					<td> <%= link_to 'Delete', admin_photo_path(photo),
+							method: :delete, data:{confirm: 'Are you sure ?'}
+						 %> </td>
+				</tr>
+				<% end %>
+			</table>
 
-			<td> <%= link_to 'Show', photo_path(photo) %> </td>
-			<td> <%= link_to 'Edit', edit_admin_photo_path(photo) %> </td>
-			<td> <%= link_to 'Delete', admin_photo_path(photo),
-					method: :delete, data:{confirm: 'Are you sure ?'}
-				 %> </td>
-		</tr>
-		<% end %>
-	</table>
 
-<%= link_to 'Add photo', new_admin_photo_path %> <br>
+
+
+</div>
+
+<!-- 
 <%= link_to 'Home', root_path %>
+ -->

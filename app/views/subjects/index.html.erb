@@ -14,7 +14,7 @@
     <tr>
     	<td><%= subject.id %></td>
       <td><%= subject.title %></td>
-      <td><%= subject.description %></td>
+      <td><%= truncate(subject.description, length: 17) %></td>
       <td><%= subject.updated_at %></td>
       <td><%= link_to 'Показать', subject_path(subject) %></td>
       <td><%= link_to 'Редактировать', edit_admin_subject_path(subject) %></td>

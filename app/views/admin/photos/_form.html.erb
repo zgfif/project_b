@@ -1,6 +1,7 @@
+
 <%= form_with model: [:admin, @photo], html: { multipart: true }, local: true  do |form| %>
 	<p>
-		<%= form.label 'Please, choose event' %>
+		<%= form.label 'Пожалуйста, выбирите событие' %>
 		<%= collection_select(:photo, :event_id, Event.all, :id, :ev_title) %>
 		
 	</p>
@@ -18,9 +19,6 @@
       Remove image
     </label>
   </p>
-  		
-	
 
-
-	<%= form.submit %>
+	<%= form.submit 'Сохранить' %>
 <% end %>

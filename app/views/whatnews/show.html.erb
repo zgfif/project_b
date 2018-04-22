@@ -1,5 +1,6 @@
 <div class="container">
 			<h2><%= @whatnew.caption %></h2>
+			<p class="text-muted"> <%=  @whatnew.created_at.strftime("%m.%d.%Y"+" в "+"%H:%M") %></p>
 		<div class="whatnew_image_show">
 			<%= image_tag(@whatnew.imagenews_url) if @whatnew.imagenews? %>   
 		</div>		
@@ -9,8 +10,12 @@
 		</p>
 
 		<p>
+
 		  <b>Tag:</b>
-		  <%= @whatnew.tag %>
+		 <span class="badge badge-primary">
+		 	<%= @whatnew.tag%>	
+		 </span> 
+		  
 		</p>
 		<if user.sign_in?&&current_user.admin? %>
 			<%=  link_to 'Редактировать', edit_admin_whatnews_path(@whatnew), class: 'btn btn-outline-secondary' %>

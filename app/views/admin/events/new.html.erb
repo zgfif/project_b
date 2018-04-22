@@ -1,16 +1,4 @@
-<h1>New event</h1>
-<%= form_with model: [:admin, @event], local: true do |form| %>
-	
-	<p>
-		<%= form.label :ev_title %>
-		<%= form.text_field :ev_title %>
-	</p>
-	<p>
-		<%= form.label :ev_description %>
-		<%= form.text_area :ev_description %>
-	</p>
-	<p>
-		<%= form.submit %>
-	</p>
-<% end %>
-<%= link_to 'Home', root_path %>
+<div class="container">
+<h1>Новое событие</h1>
+ <%= render 'form' %>
+</div>
