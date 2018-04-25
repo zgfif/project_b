@@ -4,8 +4,8 @@
 		<div class="whatnew_image_show">
 			<%= image_tag(@whatnew.imagenews_url) if @whatnew.imagenews? %>   
 		</div>		
-		    
-		<p>
+		<div>
+				<p>
 			<%= @whatnew.text %>
 		</p>
 
@@ -16,7 +16,9 @@
 		 	<%= @whatnew.tag%>	
 		 </span> 
 		  
-		</p>
+		</p>	
+		</div>    
+		
 		<if user.sign_in?&&current_user.admin? %>
 			<%=  link_to 'Редактировать', edit_admin_whatnews_path(@whatnew), class: 'btn btn-outline-secondary' %>
 	

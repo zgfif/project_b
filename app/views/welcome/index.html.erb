@@ -86,22 +86,23 @@
                     <h1>Cобытия</h1>
                   <div class="row">
                   <% @events.each do |event| %>
-                  
-                      <div class="col-sm-3 event_unit">
-                          
-                            <%= link_to event.ev_title, event_path(event) %>
-                          
+                  <!-- event_unit card -->
+                      <div class="col-sm-3 card">
+                            <% if event.photos.present?&&event.photos.first.image.present? %>
+                               
+                               <%= image_tag event.photos.first.image, height: '164', class: 'card-image-top' %>
+                              <% else %>
+                              <%= image_tag ('no_image.png') %>
+                              <% end %>
+                            <div class="card-body">
+                                <div class="card-title">
+                                  <%= link_to event.ev_title, event_path(event) %>
+                                </div>
+                            </div>
                       </div>
                   
                   <% end %>
                   </div>
-                  <!-- <div class="row">
-                      <div class="col-sm-3 event_unit">1</div>
-                      <div class="col-sm-3 event_unit">2</div>
-                      <div class="col-sm-3 event_unit">3</div>
-                      <div class="col-sm-3 event_unit">4</div>
-
-                  </div> -->
 
 
                  <div class="row row_link justify-content-end">

@@ -1,14 +1,7 @@
 <div class="container">
+<%= image_tag ('silhouette.png') %>
+<h2><%= @user.firstname %></h2><h2><%= @user.lastname %></h2>
 
-<h1>User</h1>
-<p>
-	<strong>First name:</strong>
-	<%= @user.firstname %>
-</p>
-<p>
-	<strong>Last name:</strong>
-	<%= @user.lastname %>
-</p>
 <p>
 	<strong>phone:</strong>
 	<%= @user.phone %>
@@ -22,10 +15,10 @@
 	<%= @user.admin %>
 </p>
 <p>
-	<%= link_to 'Edit profile', edit_user_path(@user) %> |
+	<%= link_to 'Редактировать профиль', edit_user_path(@user) %> <br>
 	<% if current_user.id.to_i == params[:id].to_i %>
-		<%= link_to 'Edit email/password', edit_user_registration_path %>|
+		<%= link_to 'Редактировать e-mail/пароль', edit_user_registration_path %>
 	<% end %>
-	<%= link_to 'Home', root_path %>	
+
 </p>
 </div>

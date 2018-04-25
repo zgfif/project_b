@@ -1,26 +1,29 @@
 
 <%= form_with model: [:admin, @photo], html: { multipart: true }, local: true  do |form| %>
-	<p>
-		<%= form.label 'Пожалуйста, выбирите событие' %>
-		<%= collection_select(:photo, :event_id, Event.all, :id, :ev_title) %>
+	<div class="form-group">
 		
-	</p>
-	<p>
-		<%= form.label :ph_name %>
-		<%= form.text_field :ph_name %>
-	</p>
-	<p>
-		<%= form.label :image %>
-		<%= form.file_field :image %>
-	</p>
+			<%= form.label 'Пожалуйста, выбирите событие' %>
+			<%= collection_select(:photo, :event_id, Event.all, :id, :ev_title,{},{:class=>'form-control'})%>
+			
+		
+	</div>
+	<div class="form-group">
+		<%= form.label :ph_name, 'Название' %>
+		<%= form.text_field :ph_name, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= form.label :image, 'Изображение' %>
+		<%= form.file_field :image, class: 'form-control-file' %>
+	</div>
+	<div class="form-check">
 	<% unless  @photo.image.blank? %>
-			<p>
+			
 		    <label>
 		      <%= form.check_box :remove_image %>
-		      Remove image
+		      Удалить изображение
 		    </label>
-		  </p>
-  	<% end %>
 
-	<%= form.submit 'Сохранить' %>
+  	<% end %>
+  	</div>
+	<%= form.submit 'Сохранить', class: 'btn btn-primary' %>
 <% end %>
