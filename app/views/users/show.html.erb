@@ -1,24 +1,32 @@
 <div class="container">
-<%= image_tag ('silhouette.png') %>
-<h2><%= @user.firstname %></h2><h2><%= @user.lastname %></h2>
+		<% if @user.avatar.present? %>
+			<%= image_tag(@user.avatar, width: '300') %>
+		<% else %>
+			<%= image_tag ('silhouette.png') %>
+		<% end %>
+		<h2><%= @user.firstname %></h2><h2><%= @user.lastname %></h2>
 
-<p>
-	<strong>phone:</strong>
-	<%= @user.phone %>
-</p>
-<p>
-	<strong>e-mail:</strong>
-	<%= @user.email %>
-</p>
-<p>
-	<strong>Admin:</strong>
-	<%= @user.admin %>
-</p>
-<p>
-	<%= link_to 'Редактировать профиль', edit_user_path(@user) %> <br>
-	<% if current_user.id.to_i == params[:id].to_i %>
-		<%= link_to 'Редактировать e-mail/пароль', edit_user_registration_path %>
-	<% end %>
+		<p>
+			<strong>Телефон:</strong>
+			<%= @user.phone %>
+		</p>
+		<p>
+			<strong>e-mail:</strong>
+			<%= @user.email %>
+		</p>
+		<p>
+			<% if @user.admin? %>
+				<strong>Вы АДМИН </strong>
+			<% else %>
+				<strong>нет административных прав</strong>
+			<% end %>
+		</p>
 
-</p>
+		<p> 
+			<%= link_to 'Редактировать профиль', edit_user_path(@user) %> <br>
+			<% if current_user.id.to_i == params[:id].to_i %>
+				<%= link_to 'Редактировать e-mail/пароль', edit_user_registration_path %>
+			<% end %>
+
+		</p>
 </div>

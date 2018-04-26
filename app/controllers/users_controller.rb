@@ -11,8 +11,15 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		if @user.update(user_params)
+		
+		if params[:user][:remove_avatar] == "1"
+	        		@user.remove_avatar!
+	     end
+
+		if @user.update(user_params)		
+
 			redirect_to @user
+
 		else 
 			render 'edit'
 		end
@@ -24,6 +31,6 @@ class UsersController < ApplicationController
 		redirect_to root_path, alert: 'У Вас нет доступа к этой странице' unless current_user.admin?||current_user.id.to_i == params[:id].to_i
 	end
 	def user_params
-		params.require(:user).permit(:firstname, :lastname, :phone)
+		params.require(:user).permit(:firstname, :lastname, :phone, :avatar)
 	end
 end

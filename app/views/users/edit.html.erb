@@ -3,6 +3,18 @@
 
 		<%= form_with model: @user, local: true do |form| %>
 			<div class="form-group">
+				<%= form.file_field :avatar %>
+				<%= form.hidden_field :avatar_cache %>
+			</div>
+			<% if @user.avatar.present? %>
+					<div class="form-group">
+						<label>
+					      <%= form.check_box :remove_avatar %>
+					    	 Удалить фото
+					    </label>
+					</div>
+			<% end %>
+			<div class="form-group">
 				<%= form.label :firstname, 'Имя' %>
 				<%= form.text_field :firstname, class: 'form-control' %>
 			</div>

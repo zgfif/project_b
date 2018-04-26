@@ -2,7 +2,7 @@
 			<h2><%= @whatnew.caption %></h2>
 			<p class="text-muted"> <%=  @whatnew.created_at.strftime("%m.%d.%Y"+" в "+"%H:%M") %></p>
 		<div class="whatnew_image_show">
-			<%= image_tag(@whatnew.imagenews_url) if @whatnew.imagenews? %>   
+			<%= image_tag(@whatnew.imagenews_url, width: '300') if @whatnew.imagenews? %>   
 		</div>		
 		<div>
 				<p>
