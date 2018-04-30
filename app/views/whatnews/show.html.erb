@@ -1,3 +1,7 @@
+<% content_for :page_title do
+  @whatnew.caption
+end %>
+
 <div class="container">
 			<h2><%= @whatnew.caption %></h2>
 			<p class="text-muted"> <%=  @whatnew.created_at.strftime("%m.%d.%Y"+" в "+"%H:%M") %></p>

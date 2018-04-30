@@ -1,3 +1,6 @@
+<% content_for :page_title do
+  @user.firstname+' '+@user.lastname
+end %>
 <div class="container">
 		<% if @user.avatar.present? %>
 			<%= image_tag(@user.avatar, width: '300') %>
@@ -5,7 +8,7 @@
 			<%= image_tag ('silhouette.png') %>
 		<% end %>
 		<h2><%= @user.firstname %></h2><h2><%= @user.lastname %></h2>
-
+		
 		<p>
 			<strong>Телефон:</strong>
 			<%= @user.phone %>
