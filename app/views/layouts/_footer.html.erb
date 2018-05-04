@@ -1,18 +1,21 @@
   <footer>
             <div class="container">
                 <div class="row align-items-center footer_block">
-                    <div class="col copy_right">
-                      <p>  <%= link_to image_tag("favicon_proj_b.ico"), root_path, class: 'navbar-brand' %>Fancy geek</p>
-                      <p>&copy; 2017-2018, Bratanov</p>
+                    
+                    <div class="col-md copy_right">
+                       <%= link_to image_tag("favicon_proj_b.ico"), root_path, class: 'navbar-brand' %>Fancy geek &copy; 2017-2018, Bratanov
+                      <!-- <div>&copy; 2017-2018, Bratanov</div> -->
                     </div>
-                    <div class="col contacts">
+
+                    <div class="col-md contacts">
                         <%= link_to 'Контакты', '/pages/contacts' %>
                     </div>
                         
-                    <div class="col aboutus">
+                    <div class="col-md aboutus">
                         <%= link_to 'О нас', '/pages/about' %>
                     </div>
-                    <div class="col github">
+
+                    <div class="col-md github">
                         <%= link_to 'Github', 'https://github.com/zgfif/project_b', target: '_blank'  %>
                     </div>
               </div>  
