@@ -5,8 +5,12 @@ end %>
 
 <div class="container">
 	<h1>Все новости</h1>
-<%= link_to 'Добавить', new_admin_whatnews_path, class: 'btn btn-primary' %>
-<table>
+		<% if user_signed_in?&&current_user.admin? %>
+		<p>
+			<%= link_to 'Добавить', new_admin_whatnews_path, class: 'btn btn-primary' %>	
+		</p>
+	<% end %>
+<!-- <table>
 	<tr>
 		<th>id</th>
 		<th>Caption</th>
@@ -30,5 +34,25 @@ end %>
 		</tr>		
 	<% end %>
 </table>
+ -->
+ <% @whatnews.each do |whatnew| %>
+ 	<br>
+ 	<div class="row">
+ 		<div class="col-4">
+ 			<% unless whatnew.imagenews.present? %>
+ 				<%= image_tag('no_image.png') %>
+ 				<% else %>
+ 				<%= image_tag (whatnew.imagenews ),height: '164' %>
+ 				<% end %>
+ 		</div>	
+ 		<div class="col-8">
+ 			<h2><%= link_to whatnew.caption, whatnews_path(whatnew) %></h2>
+ 			<p class="text-muted"><%= whatnew.created_at.strftime("%d.%m.%Y"+" в "+"%H:%M") %> </p>
+ 			<%= truncate(whatnew.text, length: 147) %>
+ 		</div>
+ 	</div>
+ 	
+ 	<hr> 
+ 	<% end %>
 </div>
-<!-- <%= link_to 'Home', root_path %> -->
+

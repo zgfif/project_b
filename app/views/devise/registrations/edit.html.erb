@@ -1,6 +1,9 @@
+<% content_for :page_title do
+  'Редактировать e-mail/пароль'
+end %>
 <div class="container">
-
-      <h2>Редактировать <%#= resource_name.to_s.humanize %> профиль
+<!-- Редактировать e-mail/пароль -->
+      <h2>Редактировать e-mail/пароль <%= resource_name.to_s.humanize %> профиля
         
       </h2>
 
@@ -42,8 +45,8 @@
     <div class="form-group">
       <h3>Удалить аккаунт</h3>
 
-      <p>Несчасливы? <%= button_to "Удалить", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %></p>
+      <p>Несчасливы? <%= button_to "Удалить", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete , class: 'btn btn-outline-secondary' %></p>
 
-      <%= link_to "Back", :back %>
+      <%#= link_to "Back", :back %>
     </div>
 </div>
