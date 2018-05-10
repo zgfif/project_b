@@ -27,6 +27,6 @@ end %>
 			<%=  link_to 'Редактировать', edit_admin_whatnews_path(@whatnew), class: 'btn btn-outline-secondary' %>
 			<%= link_to 'Удалить', admin_whatnews_path(@whatnew), 
 										method: :delete,
-										data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-secondary' 	%>
+										data: { confirm: 'Вы действительно хотите удалить новость' + @whatnew.caption + '?' }, class: 'btn btn-outline-secondary' 	%>
 		<% end %>
 </div>

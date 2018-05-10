@@ -3,8 +3,25 @@
 end %>
 <div class="container">
 <h1>Все события</h1>
-<%= link_to 'Add new event', new_admin_event_path, class: 'btn btn-primary' %>
-<table>
+<% if user_signed_in?&&current_user.admin? %>
+	<%= link_to 'Добавить новое событие', new_admin_event_path, class: 'btn btn-primary' %>
+<% end %>
+	<p></p>
+<% @events.each do |event| %>
+	
+
+	<div class="row">
+		<div class="col-4">
+			<h4><%= link_to event.ev_title, event_path(event) %></h4>
+		</div>
+		<div class="col-8">
+			<%= truncate(event.ev_description, length: 150 )%>	
+			<hr>
+		</div>
+		
+	</div>	
+<% end %>
+<!-- <table>
 		<th>Title</th>
 		<th>Description</th>
 		<th colspan="3"> </th>
@@ -17,5 +34,5 @@ end %>
 		<td><%= link_to 'Destroy', admin_event_path(event) , method: :delete %></td>
 	</tr>
 	<% end %>
-</table>
+</table> -->
 </div>

@@ -46,7 +46,7 @@ end %>
 
               <div class="base_block">
                   <!-- <center> -->
-                    <h1>Программа</h1>
+                    <h1> Последние добавленные курсы</h1>
                     <div class="row jumbotron">
                            <% @subjects.each do |subject| %>
                         <div class="col-sm-6 subject_unit">
@@ -55,6 +55,7 @@ end %>
                             <p>
                               <%= truncate(subject.description, length: 157) %>
                             </p>
+                            <hr>
                           </div>  
                         </div>
                           

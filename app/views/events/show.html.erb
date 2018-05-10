@@ -23,9 +23,12 @@ end %>
 				<% end %>
 			<% end %>
 		</div>
-		
+	<% if user_signed_in?&&current_user.admin? %>		
 		<p>
+		<%= link_to 'Удалить событие', admin_event_path(@event), method: :delete,
+																data: {confirm: 'Вы уверены что хотите удалить событие ' + @event.ev_title + '?'}, class: 'btn btn-outline-secondary'	%>
 		<%= link_to 'Редактировать', edit_admin_event_path(@event), class: 'btn btn-outline-secondary' %>
 		<%= link_to 'Добавить фото', new_admin_photo_path, class: 'btn btn-outline-secondary' %>
 		</p> 
+		<% end %>
 </div>
