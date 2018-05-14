@@ -77,5 +77,4 @@ ActiveRecord::Schema.define(version: 20180426172632) do
     t.string "imagenews"
   end
 
-  add_foreign_key "photos", "events"
 end

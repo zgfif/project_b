@@ -2,14 +2,14 @@
 	<div class="form-group">
 	
 	
-		<%= form.label :ev_title %>
-		<%= form.text_field :ev_title, class: 'form-control' %>
+		<%= form.label :ev_title, 'Заголовок' %>
+		<%= form.text_field :ev_title, placeholder: 'Название события', class: 'form-control' %>
 	
 	</div>
 	<div class="form-group">
 	
-		<%= form.label :ev_description %>
-		<%= form.text_area :ev_description, class: 'form-control' %>
+		<%= form.label :ev_description, 'Описание' %>
+		<%= form.text_area :ev_description, placeholder: 'Опишите предстоящее или прошедшее событие', class: 'form-control' %>
 	
 	</div>
 	<div class="form-action">
